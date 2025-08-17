@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import time as dt
 
-client = MongoClient("mongodb+srv://sanjay:Bunchofcoin12345@lms.u8gyem.mongodb.net/")
+
 db = client["library_db"]
 users_col = db["users"]
 books_col = db["books"]
