@@ -1,7 +1,15 @@
 from pymongo import MongoClient
 import time as dt
+from dotenv import load_dotenv
+import os
+from pymongo import MongoClient
 
+load_dotenv()
 
+mongo_uri = os.getenv("MONGO_URI")
+print(f"Mongo URI: {mongo_uri}")
+
+client = MongoClient(mongo_uri)
 db = client["library_db"]
 users_col = db["users"]
 books_col = db["books"]
