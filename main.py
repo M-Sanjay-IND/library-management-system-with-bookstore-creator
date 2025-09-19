@@ -7,7 +7,6 @@ from pymongo import MongoClient
 load_dotenv()
 
 mongo_uri = os.getenv("MONGO_URI")
-print(f"Mongo URI: {mongo_uri}")
 
 client = MongoClient(mongo_uri)
 db = client["library_db"]
