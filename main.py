@@ -3,6 +3,7 @@ import time as dt
 from dotenv import load_dotenv
 import os
 from pymongo import MongoClient
+import re
 
 load_dotenv()
 
@@ -15,7 +16,8 @@ books_col = db["books"]
 bkstr_col = db["bookstores"]
 
 def verify_email_val(email):
-    return "@" in email and "." in email
+    EMAIL_RE = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
+    return EMAIL_RE.match(email) is not None
 
 def get_valid_email():
     while True:
